@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 300vh;
+    background: linear-gradient(#8bb6b7, #ddd);
+}
+
+/* NAVBAR */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 60px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+#navbar.scrolled {
+    background: #111;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    padding: 12px 60px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff9800;
+}
+
+/* MENU */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #222;
+    font-size: 16px;
+    position: relative;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+/* Hover underline animation */
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ff9800;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.nav-links li a:hover {
+    color: #ff9800;
+}
+
+/* Active menu */
+.nav-links li a.active {
+    color: #ff9800;
+}
+
+/* After scroll text color */
+#navbar.scrolled .nav-links li a {
+    color: #ffffff;
+}
+
+#navbar.scrolled .nav-links li a:hover {
+    color: #ff9800;
+}
+
+/* Dummy content */
+.content {
+    height: 100vh;
+    padding-top: 120px;
+    text-align: center;
+    font-size: 40px;
+}
